@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between">
-      <div className="">Logo</div>
+      <Link to="/" className="">
+        <img
+          src="/src/assets/logo-no-background.svg"
+          alt="logo"
+          className="w-28"
+        />
+      </Link>
       <ul className="flex gap-5 items-center">
         <li>
           <Link to="/">Home</Link>
@@ -13,9 +19,11 @@ const Navbar = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
+          <Link to="/project">Projects</Link>
+        </li>
+        <li>
           <Link to="/contact">Contact</Link>
         </li>
-        ink
       </ul>
     </div>
   );
