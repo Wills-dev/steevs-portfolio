@@ -1,9 +1,8 @@
 import React from "react";
-import transition from "../transition";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-const About = () => {
+const Projects = () => {
   return (
     <div className="w-full h-full bg-slate-950 border-2 border-slate-600 p-10 flex flex-col">
       <Navbar />
@@ -13,4 +12,4 @@ const About = () => {
   );
 };
 
-export default transition(About);
+export default Projects;
