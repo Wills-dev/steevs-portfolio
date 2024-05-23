@@ -1,28 +1,36 @@
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 
-import { useLocation, Routes, Route } from "react-router-dom";
-
-import { AnimatePresence } from "framer-motion";
-
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import {
+  About,
+  Contact,
+  Experience,
+  Hero,
+  Navbar,
+  Works,
+  StarsCanvas,
+} from "./components";
+import Articles from "./components/Articles";
 
 function App() {
-  const location = useLocation();
-
   return (
-    <>
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/project" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </AnimatePresence>
-    </>
+    <BrowserRouter>
+      <div className="relative  z-0 bg-primary">
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center relative">
+          <div className="absolute top-0 bottom-0 right-0 left-0 h-full w-full bg-black xs:opacity-80 opacity-85  " />
+          <Navbar />
+          <Hero />
+        </div>
+        <About />
+        <Experience />
+        <Works />
+        <Articles />
+        <div className="relative z-10">
+          <Contact />
+          <StarsCanvas />
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
